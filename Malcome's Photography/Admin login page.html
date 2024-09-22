@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Malcolm Lismore Photography</title>
+    <style>
+        body {
+            background-color: #e0f7fa;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #00796b;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .login-container h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #00796b;
+        }
+        .login-container input[type="text"], .login-container input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #00796b;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .login-container input[type="submit"] {
+            background-color: #00796b;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #004d40;
+        }
+        .login-container .error {
+            color: red;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Admin Login</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+            <div class="error" id="error"></div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple authentication check
+            if (username === 'Malcome' && password === '1234') {
+                window.location.href = 'Admin dashboard.html'; // Redirect to the admin dashboard
+            } else {
+                document.getElementById('error').textContent = 'Invalid username or password.';
+            }
+        });
+    </script>
+</body>
+</html>
